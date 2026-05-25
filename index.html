@@ -30,7 +30,7 @@
         </div>
         <div class="brand-chip mb-8 reveal float">
           <i data-lucide="droplets" class="w-3.5 h-3.5"></i>
-          <span>PROPUESTA · IDRICA · MAYO 2026</span>
+          <span>PROPUESTA · VEOLIA · MAYO 2026</span>
         </div>
         <h1 class="title-1 mb-6 reveal" style="--reveal-delay: 0.1s">
           De <span class="text-slate-400">mover datos a</span><br />
@@ -41,7 +41,7 @@
           class="text-lg md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto reveal"
           style="--reveal-delay: 0.3s"
         >
-           Simplifica la ingesta y el análisis del dato hídrico con una infraestructura estandarizada. Implantaciones más rápidas
+           <b>Mindden</b> se consolida como el socio de referencia en implantaciones para utilities del agua,
            <br><span class="text-cyan-300" style="font-size: medium">Sin reinventar la rueda en cada implantación y sin dependencias técnicas complejas.</span>
         </p>
         <p
@@ -72,20 +72,20 @@
     <!-- ============================================================
          SLIDE 2 · EL CONTEXTO (problem framing)
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">01 · El contexto</p>
         <h2 class="title-2 mt-3 mb-6 reveal" style="--reveal-delay: 0.1s">
-          Airflow en unas implantaciones, NiFi en otras.<br />
-          <span class="gradient-text">Dos productos genéricos. Cero estandarización.</span>
+          Diferentes herramientas en cada implantación.<br />
+          <span class="gradient-text">Productos genéricos. Cero estandarización.</span>
         </h2>
         <div class="w-16 h-1 gradient-bar rounded-full mb-12 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 max-w-3xl mb-10 leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          El stack actual de Idrica usa <span class="text-white font-semibold">Apache Airflow
-          en algunas implantaciones y Apache NiFi en otras</span>, según el equipo asignado y la
-          tipología del cliente. Ambos son productos potentes y genéricos, pero esa misma
+          El stack actual utiliza <span class="text-white font-semibold">distintas soluciones de orquestación e ingesta
+          según la implantación</span>, dependiendo del equipo asignado y la
+          tipología del cliente. Aunque se emplean productos potentes y genéricos, esa misma
           elección caso a caso deja tres deudas estructurales que se pagan en cada implantación
           nueva, en cada incidencia y en cada reunión de capacidad interna.
         </p>
@@ -95,13 +95,13 @@
             <div class="icon-tile mb-4">
               <i data-lucide="layers-2" class="w-5 h-5"></i>
             </div>
-            <h3 class="font-semibold text-white mb-1.5">Dos stacks que mantener internamente</h3>
+            <h3 class="font-semibold text-white mb-1.5">Múltiples stacks que mantener internamente</h3>
             <p class="text-sm text-slate-400 leading-relaxed">
-              Idrica mantiene <em>dos productos Apache distintos</em> a la vez: plantillas,
-              best practices, formación, on-call y soporte duplicados. Una implantación NiFi
-              no aprovecha lo que aprendiste en una Airflow, ni al revés. Modelo de datos del
-              cliente, conectores agua y autenticación se rehacen artesanalmente cada vez,
-              elija el equipo lo que elija.
+              Se mantienen <em>diversas tecnologías distintas</em> a la vez: plantillas,
+              best practices, formación, on-call y soporte duplicados. Lo aprendido en una 
+              implantación con una tecnología no se aprovecha en otra que use una herramienta diferente. 
+              El modelo de datos del cliente, los conectores agua y la autenticación se rehacen 
+              artesanalmente cada vez, elija el equipo lo que elija.
             </p>
             <p class="text-xs text-cyan-300/80 mt-3 leading-snug">
               <span class="font-semibold">Con AQUA_INT:</span> un único producto para todas las
@@ -116,13 +116,13 @@
             <h3 class="font-semibold text-white mb-1.5">Trazabilidad atada a la herramienta del cliente</h3>
             <p class="text-sm text-slate-400 leading-relaxed">
               Cuando un cliente reporta <em>"faltan lecturas de las 14:00"</em>, el equipo
-              tiene que abrir <em>la herramienta que esa implantación usa</em> (Provenance
-              de NiFi o logs Airflow), cruzarla con la BBDD destino y reconstruir el viaje
+              tiene que abrir <em>el software específico que esa implantación usa</em> (revisando 
+              historiales de procedencia o logs dispersos), cruzarla con la BBDD destino y reconstruir el viaje
               del mensaje a mano. Cada cliente es un mundo distinto — el conocimiento vive
               en la cabeza del operador asignado.
             </p>
             <p class="text-xs text-cyan-300/80 mt-3 leading-snug">
-              <span class="font-semibold">Con AQUA_INT + Mindden Flow:</span> el mismo panel
+              <span class="font-semibold">Con AQUA_INT + Process Minnig:</span> el mismo panel
               diagnostica end-to-end cualquier implantación, atribuye cuellos por etapa y lo explica en español.
             </p>
           </div>
@@ -132,14 +132,14 @@
             </div>
             <h3 class="font-semibold text-white mb-1.5">Cero inteligencia sobre el dato</h3>
             <p class="text-sm text-slate-400 leading-relaxed">
-              Ni Airflow ni NiFi entienden el proceso de negocio que ejecutan.
+              Los orquestadores genéricos no entienden el proceso de negocio que ejecutan.
               <em>"¿Aguantamos el doble de mensajes en verano?"</em>,
               <em>"¿dónde se va el lead time de implantación?"</em>: hoy se responden con
-              experiencia personal porque ni el orquestador ni el flow de ingesta saben
+              experiencia personal porque ni el motor de ejecución ni el flujo de ingesta saben
               nada del dominio agua.
             </p>
             <p class="text-xs text-cyan-300/80 mt-3 leading-snug">
-              <span class="font-semibold">Con Mindden Flow:</span> Process Mining sobre el propio
+              <span class="font-semibold">Process Mining</span>  sobre el propio
               histórico, simulación what-if en segundos y narrativa IA en español.
             </p>
           </div>
@@ -149,7 +149,7 @@
           <p class="text-base text-slate-400 max-w-3xl mx-auto">
             <span class="text-cyan-300 font-semibold">AQUA_INT</span> es
             una plataforma vertical del sector agua, estandarizada para todas las implantaciones.
-            <span class="text-cyan-300 font-semibold">MINDEN FLOW</span> añade una capa de inteligencia de proceso única, algo que ningún orquestador genérico puede ofrecer. Un solo producto,
+            <span class="text-cyan-300 font-semibold">PROCESS MINING</span> añade una capa de inteligencia de proceso única, algo que ningún orquestador genérico puede ofrecer. Un solo producto,
             todos los clientes, una sola operativa.
           </p>
         </div>
@@ -159,63 +159,61 @@
     <!-- ============================================================
          SLIDE 3 · COMPARATIVA AQUA_INT vs AIRFLOW + NIFI
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">02 · El cambio de paradigma</p>
         <h2 class="title-2 mt-3 mb-6 reveal" style="--reveal-delay: 0.1s">
-          AQUA_INT frente a <span class="gradient-text">Apache Airflow / Apache NiFi</span>
+          AQUA_INT frente a <span class="gradient-text">Herramientas de Terceros</span>
         </h2>
         <div class="w-16 h-1 gradient-bar rounded-full mb-8 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 max-w-3xl mb-10 leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          Airflow y NiFi son herramientas <span class="text-white">de propósito general</span>:
-          potentes, pero <em>obligan a Idrica a construir su propia plataforma</em> de agua
-          encima de ellas, implantación a implantación — y a mantener internamente dos productos
-          distintos en paralelo. AQUA_INT es una <span class="text-white">plataforma vertical
-          del sector</span> que ya trae resuelto lo que en el stack actual hay que escribir cada vez.
+          Las soluciones tradicionales son herramientas <span class="text-white">de propósito general</span>:
+          potentes, pero <em>obligan a construir una plataforma propia</em> de agua
+          encima de ellas, implantación a implantación — y a mantener internamente tecnologías
+          distintas en paralelo. AQUA_INT es una <span class="text-white">plataforma vertical
+          del sector</span> que ya trae resuelto lo que en el stack tradicional hay que escribir cada vez.
         </p>
 
         <div class="vs-grid">
           <div class="vs-card before reveal" style="--reveal-delay: 0.22s">
             <span class="vs-pill">
               <i data-lucide="layers-2" class="w-3 h-3"></i>
-              Stack actual · Airflow o NiFi por implantación
+              Stack tradicional · Orquestadores genéricos por implantación
             </span>
-            <h3>Dos productos genéricos a mantener, ningún dominio resuelto</h3>
+            <h3>Productos genéricos a mantener, ningún dominio resuelto</h3>
             <ul class="vs-list">
               <li>
-                <strong class="text-rose-300">Dos productos Apache</strong> que Idrica sostiene
-                a la vez internamente — Airflow (scheduler/webserver/workers + meta-DB) y
-                NiFi (nodes + Zookeeper + meta-DB) — cada uno con su CVE feed, sus upgrades y su on-call.
+                <strong class="text-rose-300">Múltiples productos complejos</strong> que se sostienen
+                a la vez internamente (motores de ejecución, servidores web, nodos de ingesta, gestores de estado y bases de datos internas), cada uno con sus propias vulnerabilidades, actualizaciones y guardias asociadas.
               </li>
               <li>
-                <strong class="text-rose-300">Dos lenguajes de configuración</strong>: DAGs en Python
-                para Airflow, plantillas XML / canvas drag&drop para NiFi. Lo aprendido en una
-                implantación no se mueve a la otra.
+                <strong class="text-rose-300">Diversidad de lenguajes</strong>: código a medida en scripts,
+                configuraciones complejas o interfaces de canvas visuales. Lo aprendido en una
+                implantación no se transfiere a la otra de forma directa.
               </li>
               <li>
-                <strong class="text-rose-300">Equipos especializados en silo</strong>: hay
-                gente Airflow y gente NiFi. La asignación a un cliente se condiciona por quién
-                hay libre, no por lo mejor para el caso.
+                <strong class="text-rose-300">Equipos especializados en silo</strong>: se generan
+                perfiles técnicos estancados en cada herramienta. La asignación a un cliente se condiciona por quién
+                está libre, no por lo mejor para el proyecto.
               </li>
               <li>
                 <strong class="text-rose-300">Conectores agua reescritos por cliente</strong>:
                 MQTT, Modbus, OPC-UA, LoRaWAN, SCADA — cada implantación es un "casi igual" al
-                anterior, sin reuso entre las que van por Airflow y las que van por NiFi.
+                anterior, sin una base de reutilización real entre los diferentes stacks tecnológicos elegidos.
               </li>
               <li>
                 <strong class="text-rose-300">Sin modelo de dominio</strong>: cada cliente trae el
-                suyo (sensores, NRW, EDAR, calidad). Semanas de modelado antes de la primera lectura.
+                suyo (sensores, NRW, EDAR, calidad). Semanas de modelado antes de la primera lectura de datos.
               </li>
               <li>
                 <strong class="text-rose-300">Trazabilidad atada a la herramienta del cliente</strong>:
-                cada incidencia se diagnostica con el utillaje específico (Provenance NiFi o logs
-                Airflow), no con un panel común.
+                cada incidencia se diagnostica con el utillaje o los registros específicos de la tecnología de turno, no con un panel común.
               </li>
               <li>
-                <strong class="text-rose-300">Cero inteligencia de proceso</strong>: mueven dato pero
-                no lo entienden. No hay simulación, ni Process Mining, ni narrativa IA.
+                <strong class="text-rose-300">Cero inteligencia de proceso</strong>: mueven datos pero
+                no los entienden. No hay capacidad de simulación, ni Process Mining, ni narrativa analítica por IA.
               </li>
             </ul>
           </div>
@@ -232,36 +230,36 @@
             <h3>Un solo producto interno, dominio agua resuelto de fábrica</h3>
             <ul class="vs-list">
               <li>
-                <strong class="text-cyan-200">Un único stack</strong> que Idrica mantiene
-                internamente — Docker Compose / K3s + FastAPI + PostgreSQL/TimescaleDB — y aplica
-                igual en todas las implantaciones, sin elegir herramienta por cliente.
+                <strong class="text-cyan-200">Un único stack</strong> que se mantiene
+                unificadamente — Docker Compose / K3s + FastAPI + PostgreSQL/TimescaleDB — y se aplica
+                igual en todas las implantaciones, sin cambiar de herramientas por cliente.
               </li>
               <li>
                 <strong class="text-cyan-200">Configuración declarativa YAML</strong>: añadir
-                un conector nuevo es editar un fichero, no diseñar un DAG ni dibujar un canvas NiFi.
-                Lo que aprendes en un cliente sirve para el siguiente.
+                un conector nuevo es editar un fichero, no diseñar complejas estructuras de código ni dibujar flujos visuales desde cero.
+                Lo que se aprende en un cliente sirve directamente para el siguiente.
               </li>
               <li>
                 <strong class="text-cyan-200">Un solo perfil técnico</strong>: el mismo ingeniero
-                de Idrica opera cualquier implantación. Curva de aprendizaje única, formación única,
-                rotaciones más flexibles.
+                puede operar cualquier implantación. Curva de aprendizaje única, formación centralizada y
+                rotaciones de equipo totalmente flexibles.
               </li>
               <li>
                 <strong class="text-cyan-200">Conectores agua de serie</strong>: MQTT, Modbus,
-                OPC-UA, LoRaWAN, REST, SCADA, SFTP, Webhooks — con retry, idempotencia,
-                store-and-forward y cuarentena ya integrados.
+                OPC-UA, LoRaWAN, REST, SCADA, SFTP, Webhooks — con mecanismos de reintento, idempotencia,
+                store-and-forward y gestión de cuarentena ya integrados.
               </li>
               <li>
                 <strong class="text-cyan-200">Modelo canónico del sector</strong> ya modelado:
-                sensor.reading, meter.reading, quality.measurement, alarm. Onboardar es activar entidades.
+                sensor.reading, meter.reading, quality.measurement, alarm. El onboarding consiste en activar entidades.
               </li>
               <li>
                 <strong class="text-cyan-200">Trazabilidad end-to-end común</strong>: el mismo panel
-                para todos los clientes, con tiempos por etapa y salud por conector en tiempo real.
+                para todos los clientes, con control de tiempos por etapa y estado de salud por conector en tiempo real.
               </li>
               <li>
-                <strong class="text-cyan-200">Mindden Flow encima</strong>: Process Mining, drift,
-                cuellos de botella, simulación what-if y narrativa IA en español sobre el mismo dato.
+                <strong class="text-cyan-200">Process Mining integrado</strong>: minería de procesos, detección de desviaciones,
+                cuellos de botella, simulación what-if y narrativa IA en español sobre el mismo dato unificado.
               </li>
             </ul>
           </div>
@@ -275,8 +273,8 @@
             <i data-lucide="zap" class="w-4 h-4 inline align-text-bottom mr-1"></i>
             No es un orquestador más. Es el <span class="font-semibold">stack completo</span>
             (ingesta + buffer + canonicalización + dominio agua + multi-tenant + observabilidad +
-            inteligencia de proceso) en un único producto que Idrica entrega a sus clientes — no
-            que monta para cada uno.
+            inteligencia de proceso) en un único producto que se entrega a los clientes — no
+            un desarrollo a medida que se monta para cada uno de ellos.
           </p>
         </div>
       </div>
@@ -285,7 +283,7 @@
     <!-- ============================================================
          SLIDE 4 · ARQUITECTURA
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">03 · Cómo encaja</p>
@@ -295,10 +293,10 @@
         <div class="w-16 h-1 gradient-bar rounded-full mb-8 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 max-w-3xl mb-10 leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          Donde hoy hay <span class="text-rose-300 font-semibold">Airflow o NiFi + glue code por cliente</span>,
+          Donde hoy hay <span class="text-rose-300 font-semibold">herramientas genéricas + código de acoplamiento por cliente</span>,
           mañana hay <span class="text-cyan-300 font-semibold">una única plataforma</span> igual para
-          todas las implantaciones: AQUA_INT captura, normaliza y almacena; Mindden Flow analiza,
-          simula y narra. Mismas fuentes, mismos destinos, un solo producto que Idrica domina.
+          todas las implantaciones: AQUA_INT captura, normaliza y almacena; el motor de Process Mining analiza,
+          simula y narra. Mismas fuentes, mismos destinos, un solo producto bajo un control operativo unificado.
         </p>
 
         <div class="arch-flow reveal" style="--reveal-delay: 0.2s">
@@ -338,9 +336,9 @@
           <div class="arch-node accent">
             <div class="flex items-center gap-2 mb-1">
               <i data-lucide="workflow" class="w-5 h-5 text-cyan-300"></i>
-              <span class="arch-tag" >Inteligencia de proceso</span>
+              <span class="arch-tag" >Inteligencia</span>
             </div>
-            <div class="arch-name">Mindden Flow</div>
+            <div class="arch-name">Process Mining</div>
             <ul class="arch-list">
               <li>Descubrimiento del flujo real</li>
               <li>Conformance + drift</li>
@@ -373,7 +371,7 @@
     <!-- ============================================================
          SLIDE 4 · PILAR 1 — ONBOARDING
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">04 · Pilar 1</p>
@@ -383,9 +381,9 @@
         <div class="w-16 h-1 gradient-bar rounded-full mb-8 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 max-w-3xl mb-8 leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          En el stack actual, cada cliente nuevo arranca con un ingeniero escribiendo
-          <span class="text-rose-300">DAGs Python en Airflow</span> o dibujando
-          <span class="text-rose-300">canvas NiFi</span> (según la tipología elegida para esa
+          En el stack tradicional, cada cliente nuevo arranca con un ingeniero escribiendo
+          <span class="text-rose-300">scripts de código a medida</span> o dibujando
+          <span class="text-rose-300">flujos de datos visuales</span> (según la tipología elegida para esa
           implantación), diseñando el modelo de datos, montando el panel de salud y configurando
           los permisos. <span class="text-white">Con AQUA_INT esa parte ya está hecha</span> y se
           aplica con configuración YAML, igual para todos los clientes.
@@ -443,7 +441,7 @@
             </div>
             <div class="glass-card p-5">
               <p class="text-xs uppercase tracking-widest text-cyan-300 mb-2">
-                Lo que esto le devuelve a Idrica
+                Lo que esto devuelve a la operativa
               </p>
               <ul class="text-sm text-slate-300 space-y-1.5 leading-relaxed">
                 <li class="flex gap-2">
@@ -468,7 +466,7 @@
     <!-- ============================================================
          SLIDE 5 · PILAR 2 — VISIBILIDAD (con mockup)
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">05 · Pilar 2</p>
@@ -480,8 +478,8 @@
         <p class="text-slate-300 max-w-3xl mb-8 leading-relaxed reveal" style="--reveal-delay: 0.18s">
           Cuando el cliente pregunta <em class="text-cyan-200">"¿llegaron las lecturas de la planta
           norte de las 14:00?"</em>, hoy el equipo abre la herramienta que usa esa implantación —
-          <span class="text-rose-300">Data Provenance de NiFi</span> o
-          <span class="text-rose-300">logs de tareas Airflow</span> — y la cruza con la BBDD destino
+          <span class="text-rose-300">los paneles de procedencia de datos</span> o
+          <span class="text-rose-300">los logs de tareas del software de turno</span> — y la cruza con la BBDD destino
           para reconstruir el viaje del mensaje a mano. Cada cliente, una operativa distinta.
           Con AQUA_INT se responde en un clic: el mismo panel para cualquier implantación,
           cada mensaje trazado de extremo a extremo y la salud por conector en tiempo real.
@@ -536,7 +534,6 @@
             </div>
           </div>
 
-          <!-- Imágenes: capturas de pantalla -->
           <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.3s">
             <div class="mock-window overflow-hidden">
               <img src="img/eventoraw.jpg" alt="Event raw" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
@@ -614,7 +611,7 @@
     <!-- ============================================================
          SLIDE · TCO / ROI CUANTIFICADO
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">06 · El retorno</p>
@@ -624,8 +621,8 @@
         <div class="w-16 h-1 gradient-bar rounded-full mb-8 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 max-w-3xl mb-8 leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          Estimaciones de orden de magnitud comparando el modelo actual (Idrica mantiene
-          <em>Airflow en unas implantaciones, NiFi en otras</em>, glue code por cliente) con
+          Estimaciones de orden de magnitud comparando el modelo tradicional (mantenimiento de 
+          <em>distintas herramientas según la implantación</em> y código de acoplamiento por cliente) con
           AQUA_INT como producto único para todas. Cifras <em>conservadoras</em>, ajustables al
           detalle en la PoC sobre un caso real.
         </p>
@@ -639,7 +636,7 @@
           <div class="roi-chip">
             <div class="roi-chip-num">2 → 1</div>
             <div class="roi-chip-label">Productos a mantener</div>
-            <p class="roi-chip-sub">Airflow y NiFi sustituidos por un único stack vertical agua</p>
+            <p class="roi-chip-sub">Herramientas de terceros sustituidas por un único stack vertical agua</p>
           </div>
           <div class="roi-chip">
             <div class="roi-chip-num">−40%</div>
@@ -658,34 +655,34 @@
             <thead>
               <tr>
                 <th class="col-dim">Dimensión</th>
-                <th class="col-before">Stack actual · Airflow <em>o</em> NiFi por cliente</th>
-                <th class="col-after">AQUA_INT + Mindden Flow</th>
+                <th class="col-before">Stack tradicional · Multi-tecnología por cliente</th>
+                <th class="col-after">AQUA_INT + Process Mining</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td class="col-dim">Productos a mantener internamente</td>
-                <td class="col-before"><span class="tco-num">2</span> productos Apache distintos, cada uno con sus CVEs, upgrades, plantillas, on-call y best practices.</td>
+                <td class="col-before"><span class="tco-num">2</span> o más productos genéricos distintos, cada uno con sus vulnerabilidades, actualizaciones, plantillas, on-call y best practices.</td>
                 <td class="col-after"><span class="tco-num">1</span> stack único vertical agua. Una sola pila a securizar, actualizar y formar.</td>
               </tr>
               <tr>
                 <td class="col-dim">Contenedores típicos por implantación</td>
-                <td class="col-before"><span class="tco-num">6-10</span> (scheduler/workers/webserver Airflow o nodes NiFi + Zookeeper + meta-DB + glue services)</td>
+                <td class="col-before"><span class="tco-num">6-10</span> (motores de ejecución, servidores web, nodos de ingesta + gestores de estado + meta-DB + servicios de acoplamiento)</td>
                 <td class="col-after"><span class="tco-num">5-7</span> (API + frontend + Postgres/Timescale + MQTT broker + observabilidad) iguales para todas las implantaciones</td>
               </tr>
               <tr>
                 <td class="col-dim">Time-to-market por implantación</td>
-                <td class="col-before"><span class="tco-num">4-6 meses</span> de ingeniería: DAGs Python <em>o</em> canvas NiFi, modelo de datos, paneles, RBAC.</td>
+                <td class="col-before"><span class="tco-num">4-6 meses</span> de ingeniería: scripts de código a medida, flujos de datos visuales, modelo de datos, paneles, RBAC.</td>
                 <td class="col-after"><span class="tco-num">4-6 semanas</span> de configuración: activar conectores YAML, mapear sensores, dar acceso SSO.</td>
               </tr>
               <tr>
                 <td class="col-dim">Reuso entre implantaciones</td>
-                <td class="col-before"><span class="tco-num">Bajo</span>. Lo aprendido en un cliente Airflow no se mueve a uno NiFi (ni viceversa).</td>
+                <td class="col-before"><span class="tco-num">Bajo</span>. Lo aprendido en un cliente con una tecnología no se transfiere a otro con una herramienta diferente.</td>
                 <td class="col-after"><span class="tco-num">Alto</span>. Un mismo producto, mismas plantillas, mismos conectores en todos los clientes.</td>
               </tr>
               <tr>
                 <td class="col-dim">Conectores agua de fábrica</td>
-                <td class="col-before"><span class="tco-num">0</span>. Cada cliente reescribe o adapta lo del anterior — además, en lenguaje distinto según la herramienta.</td>
+                <td class="col-before"><span class="tco-num">0</span>. Cada cliente reescribe o adapta lo del anterior — además, en lenguajes o interfaces distintos según la herramienta.</td>
                 <td class="col-after"><span class="tco-num">8+ listos</span>: MQTT, Modbus, OPC-UA, LoRaWAN, REST, SQL, SFTP, Webhooks con retry/idempotencia/cuarentena.</td>
               </tr>
               <tr>
@@ -695,34 +692,34 @@
               </tr>
               <tr>
                 <td class="col-dim">Multi-tenancy</td>
-                <td class="col-before">A medida (despliegue por cliente o tenancy lógica complicada). Forks frecuentes.</td>
+                <td class="col-before">A medida (despliegue por cliente o arquitectura lógica complicada). Ramificaciones frecuentes de código.</td>
                 <td class="col-after">Nativa con Row-Level Security + JWT. Un deployment, N clientes, mismo código.</td>
               </tr>
               <tr>
                 <td class="col-dim">Trazabilidad end-to-end</td>
-                <td class="col-before">Cada cliente, su herramienta: Provenance NiFi <em>o</em> logs Airflow + BBDD destino, cruzando timestamps a mano.</td>
+                <td class="col-before">Cada cliente, su herramienta: registros específicos de su tecnología + BBDD destino, cruzando marcas de tiempo a mano.</td>
                 <td class="col-after">Mismo panel para todos: cada mensaje trazado de sensor a dominio con tiempos por etapa.</td>
               </tr>
               <tr>
                 <td class="col-dim">Inteligencia de proceso</td>
-                <td class="col-before"><span class="tco-num">No existe.</span> Ni Process Mining, ni simulación, ni narrativa IA.</td>
-                <td class="col-after">Mindden Flow incluido: descubrimiento, drift, cuellos de botella, what-if, NLP en español.</td>
+                <td class="col-before"><span class="tco-num">No existe.</span> Ni minería de procesos, ni simulación, ni narrativa IA.</td>
+                <td class="col-after">Process Mining incluido: descubrimiento, desviaciones, cuellos de botella, what-if, NLP en español.</td>
               </tr>
               <tr>
                 <td class="col-dim">Perfiles técnicos especializados</td>
-                <td class="col-before"><span class="tco-num">2 silos</span> (especialistas Airflow / especialistas NiFi). Asignación a cliente condicionada por quién hay libre.</td>
-                <td class="col-after"><span class="tco-num">1 perfil</span> único cubre todas las implantaciones. Rotaciones más flexibles.</td>
+                <td class="col-before"><span class="tco-num">2 o más silos</span> (especialistas en distintas soluciones comerciales o de código abierto). Asignación condicionada por disponibilidad.</td>
+                <td class="col-after"><span class="tco-num">1 perfil</span> único cubre todas las implantaciones. Rotaciones de equipo más flexibles.</td>
               </tr>
               <tr>
                 <td class="col-dim">Curva de aprendizaje para junior</td>
-                <td class="col-before">Dominar el producto Apache asignado antes de ser operativo. Movilidad entre clientes limitada.</td>
+                <td class="col-before">Dominar el producto técnico asignado antes de ser operativo. Movilidad entre clientes limitada.</td>
                 <td class="col-after">Una plataforma con configuración declarativa. Operativo en semanas, en cualquier cliente.</td>
               </tr>
             </tbody>
           </table>
           <p class="tco-foot">
-            Estimaciones basadas en patrones habituales del sector utilities + nuestra experiencia
-            sustituyendo pilas Airflow/NiFi en implantaciones reales. Cifras ajustables sobre un cliente concreto en la PoC.
+            Estimaciones basadas en patrones habituales del sector utilities + experiencia acumulada
+            sustituyendo tecnologías tradicionales en implantaciones reales. Cifras ajustables sobre un cliente concreto en la PoC.
           </p>
         </div>
       </div>
@@ -731,29 +728,29 @@
     <!-- ============================================================
          SLIDE · ¿QUÉ ES MINDDEN FLOW? (explainer Process Mining)
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <div class="chapter-divider reveal">
           <i data-lucide="workflow" class="w-5 h-5 text-cyan-300"></i>
           <div>
-            <div class="chapter-tag">CAPÍTULO · MINDDEN FLOW</div>
-            <div class="chapter-title">La capa que hoy no existe sobre Airflow o NiFi</div>
+            <div class="chapter-tag">CAPÍTULO · PROCESS MINING</div>
+            <div class="chapter-title">La capa que hoy no existe sobre los orquestadores genéricos</div>
           </div>
         </div>
 
         <p class="eyebrow reveal">07 · Categoría nueva</p>
         <h2 class="title-2 mt-3 mb-6 reveal" style="--reveal-delay: 0.1s">
-          ¿Qué es <span class="gradient-text">Mindden Flow</span> y por qué Idrica lo necesita?
+          ¿Qué es <span class="gradient-text">el módulo de Process Mining</span> y por qué se necesita?
         </h2>
         <div class="w-16 h-1 gradient-bar rounded-full mb-8 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 max-w-3xl mb-10 leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          Mindden Flow es una <span class="text-white font-semibold">plataforma de Process Mining
+          Process Mining es una <span class="text-white font-semibold">plataforma de minería de procesos
           multi-agente</span>: aprende del histórico de eventos cómo se ejecuta <em>de verdad</em>
-          un proceso (la ingesta de datos del cliente, una implantación de GoAigua, el ciclo de
+          un proceso (la ingesta de datos del cliente, una implantación en producción, el ciclo de
           incidencias…) y lo compara, mide, simula y narra. <span class="text-cyan-300">No es BI, no
-          es APM, no es un orquestador.</span> Es la pieza que Airflow y NiFi
+          es APM, no es un orquestador.</span> Es la pieza que las soluciones tradicionales
           <span class="text-white">nunca dieron</span>.
         </p>
 
@@ -764,7 +761,7 @@
             </div>
             <h3 class="font-semibold text-white mb-1.5">No es BI</h3>
             <p class="text-sm text-slate-400 leading-relaxed">
-              Un dashboard te dice <em>cuánto</em>. Mindden Flow te dice <em>por dónde</em> ha
+              Un dashboard te dice <em>cuánto</em>. El motor de Process Mining te dice <em>por dónde</em> ha
               pasado realmente cada caso, qué variantes existen, dónde se desvía del happy path
               y por qué. Trabaja con secuencias de eventos, no con agregados.
             </p>
@@ -775,9 +772,9 @@
             </div>
             <h3 class="font-semibold text-white mb-1.5">No es APM</h3>
             <p class="text-sm text-slate-400 leading-relaxed">
-              Datadog o New Relic miden infraestructura: CPU, RAM, latencia de red. Mindden Flow
+              Las soluciones APM miden infraestructura: CPU, RAM, latencia de red. Nuestro Process Mining
               mide procesos de negocio: cuánto tarda una lectura en llegar al dominio, cuánto
-              tiempo se queda una implantación parada esperando firma del cliente.
+              tiempo se queda una implantación parada esperando la firma del cliente.
             </p>
           </div>
           <div class="glass-card p-6 reveal" style="--reveal-delay: 0.38s">
@@ -786,7 +783,7 @@
             </div>
             <h3 class="font-semibold text-white mb-1.5">No es un orquestador</h3>
             <p class="text-sm text-slate-400 leading-relaxed">
-              Airflow y NiFi <em>ejecutan</em> el proceso. Mindden Flow lo
+              Las herramientas tradicionales <em>ejecutan</em> el proceso. Process Mining lo
               <em>observa, entiende y predice</em>. Convive con cualquier orquestador y
               sobre AQUA_INT lee directamente los eventos canónicos sin instrumentación adicional.
             </p>
@@ -800,7 +797,7 @@
               <span class="text-xs uppercase tracking-widest text-cyan-300 font-semibold">Descubrimiento</span>
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
-              Aprende del histórico el mapa real del proceso. Dibuja diagrama, red de Petri y Gantt
+              Aprende del histórico el mapa real del proceso. Dibuja diagramas, redes de Petri y Gantt
               sin que nadie lo diseñe a mano.
             </p>
           </div>
@@ -811,7 +808,7 @@
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
               Compara lo que está pasando hoy con el patrón histórico. Avisa con magnitud cuando
-              algo deriva — drift, SLA en riesgo, ruta nueva inesperada.
+              algo deriva: desviaciones de flujo, SLA en riesgo o rutas nuevas inesperadas.
             </p>
           </div>
           <div class="glass-card p-5 reveal" style="--reveal-delay: 0.56s">
@@ -821,7 +818,7 @@
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
               Atribuye tiempo a la etapa real (no a la sospechada). Distingue trabajo activo de
-              espera. Calcula p50/p95 y aísla outliers automáticamente.
+              espera. Calcula p50/p95 y aísla anomalías automáticamente.
             </p>
           </div>
           <div class="glass-card p-5 reveal" style="--reveal-delay: 0.62s">
@@ -830,8 +827,8 @@
               <span class="text-xs uppercase tracking-widest text-cyan-300 font-semibold">Simulación + NLP</span>
             </div>
             <p class="text-sm text-slate-300 leading-relaxed">
-              What-if en 30 segundos sobre el propio histórico. Narrativa IA en español
-              en cada pantalla, citada al dato. Modelo LLM elegible en la UI.
+              Escenarios what-if en 30 segundos sobre el propio histórico. Narrativa IA en español
+              en cada pantalla, citada al dato. Modelo LLM elegible en la interfaz.
             </p>
           </div>
         </div>
@@ -841,10 +838,10 @@
           style="--reveal-delay: 0.68s"
         >
           <p class="text-center text-base md:text-lg text-cyan-100 leading-relaxed">
-            <span class="text-cyan-300 font-semibold">Idrica ya tiene quien mueva el dato.</span>
-            Mindden Flow es la primera capa que lo <span class="font-semibold">entiende</span> —
-            sobre la ingesta del cliente, sobre el ciclo de implantaciones de GoAigua, sobre
-            cualquier proceso del que tengáis eventos. Una categoría nueva, no un competidor
+            <span class="text-cyan-300 font-semibold">Ya se dispone de la infraestructura para mover el dato.</span>
+            Process Mining es la primera capa que lo <span class="font-semibold">entiende</span>:
+            sobre la ingesta del cliente, sobre el ciclo global de implantaciones, sobre
+            cualquier proceso del que se disponga de eventos. Una categoría nueva, no un competidor
             de lo que ya existe.
           </p>
         </div>
@@ -854,13 +851,13 @@
     <!-- ============================================================
          SLIDE 6 · PILAR 3 — DIAGNÓSTICO (mockup pipeline + gauge)
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <div class="chapter-divider reveal">
           <i data-lucide="workflow" class="w-5 h-5 text-cyan-300"></i>
           <div>
-            <div class="chapter-tag">MINDDEN FLOW · 1/3</div>
+            <div class="chapter-tag">PROCESS MINING · 1/3</div>
             <div class="chapter-title">Diagnóstico automático del proceso</div>
           </div>
         </div>
@@ -872,14 +869,13 @@
         <div class="w-16 h-1 gradient-bar rounded-full mb-6 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 max-w-3xl mb-8 leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          Hoy nadie mide cómo viaja realmente el dato del cliente — solo cómo se diseñó. Mindden
-          Flow aprende el flujo real del histórico, lo compara con lo que se ha visto siempre y
+          Hoy nadie mide cómo viaja realmente el dato del cliente — solo cómo se diseñó. El motor de 
+          Process Mining aprende el flujo real del histórico, lo compara con lo que se ha visto siempre y
           avisa cuando cambia. <span class="text-white">Es la capa de inteligencia que ahora mismo
-          no existe sobre la plataforma de Idrica.</span>
+          no existe sobre las plataformas analíticas convencionales.</span>
         </p>
 
         <div class="grid lg:grid-cols-[1.3fr_1fr] gap-8 items-start">
-          <!-- Imágenes: diagnóstico, bottlenecks, what-if -->
           <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.2s">
             <div class="mock-window overflow-hidden">
               <img src="img/diagnostico.jpg" alt="Diagnóstico" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
@@ -895,7 +891,6 @@
             </div>
           </div>
 
-          <!-- Capabilities -->
           <div class="space-y-3.5">
             <div class="glass-card p-4 reveal" style="--reveal-delay: 0.28s">
               <div class="flex items-start gap-3">
@@ -1117,7 +1112,7 @@
     <!-- ============================================================
          SLIDE 9 · PILAR 6 — TAMBIÉN PARA IMPLANTACIÓN
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">11 · Pilar 6</p>
@@ -1128,19 +1123,18 @@
         <div class="w-16 h-1 gradient-bar rounded-full mb-8 reveal" style="--reveal-delay: 0.15s"></div>
 
         <p class="text-slate-300 mb-4 max-w-3xl leading-relaxed reveal" style="--reveal-delay: 0.18s">
-          La PMO de Idrica planifica hoy con la <em class="text-cyan-200">memoria del equipo</em>:
+          La oficina de gestión de proyectos planifica hoy con la <em class="text-cyan-200">memoria del equipo</em>:
           "este tipo de cliente suele tardar X", "el problema siempre está en la formación". Lo que
           falta es el dato bruto detrás de esa intuición.
         </p>
         <p class="text-slate-300 mb-8 max-w-3xl leading-relaxed reveal" style="--reveal-delay: 0.24s">
-          Aplicando Mindden Flow al propio ciclo de vida de implantación de GoAigua
+          Aplicando el motor de Process Mining al propio ciclo de vida del despliegue
           <span class="text-cyan-300">(kickoff → infra → configuración → QA → formación →
             aceptación)</span>, el sistema descubre y mide automáticamente del histórico de Jira
           dónde se va el tiempo de verdad.
         </p>
 
         <div class="grid lg:grid-cols-[1.4fr_1fr] gap-6 items-center">
-          <!-- Imágenes: diagrama, petri, gantt, volumen, transiciones -->
           <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.3s">
             <div class="mock-window overflow-hidden">
               <img src="img/diagramaflujo.jpg" alt="Diagrama de flujo" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
@@ -1203,7 +1197,7 @@
         >
           <p class="text-emerald-300 font-semibold">
             <i data-lucide="line-chart" class="w-4 h-4 inline align-text-bottom mr-1"></i>
-            PMO de Idrica planifica las implantaciones anuales con datos del propio histórico, no
+            La oficina de gestión planifica los despliegues anuales con datos del propio histórico, no
             por intuición.
           </p>
         </div>
@@ -1213,7 +1207,7 @@
     <!-- ============================================================
          SLIDE 10 · PILAR 7 — KPIs SIN BI
          ============================================================ -->
-    <section class="slide">
+<!--     <section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">12 · Pilar 7</p>
@@ -1254,12 +1248,12 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ============================================================
          SLIDE 11 · BIG NUMBERS
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">13 · El impacto</p>
@@ -1272,14 +1266,15 @@
           <div class="glass-card big-stat reveal" style="--reveal-delay: 0.2s">
             <div class="big-stat-num gradient">21,7M</div>
             <div class="big-stat-unit">señales</div>
-            <p class="big-stat-label">Reales 2022-2026 sobre 66 sensores sinteticos, y 33.863 mediciones.</p>
+            <p class="big-stat-label">Reales 2022-2026 sobre 66 sensores sintéticos, y 33.863 mediciones.</p>
           </div>
           <div class="glass-card big-stat reveal" style="--reveal-delay: 0.28s">
             <div class="big-stat-num gradient">2</div>
             <div class="big-stat-unit">tenants demo</div>
             <p class="big-stat-label">
-              <span class="font-mono text-xs">idrica-ingesta-sensores</span>
-              <span class="font-mono text-xs">idrica-despliegue-jira</span>,<br> multi-tenant nativo.
+              <span class="font-mono text-xs">demo-ingesta-sensores</span>
+              <br> 
+              <span class="font-mono text-xs">demo-despliegue-jira</span>,<br> multi-tenant nativo.
             </p>
           </div>
           <div class="glass-card big-stat reveal" style="--reveal-delay: 0.36s">
@@ -1293,16 +1288,15 @@
             <div class="big-stat-num gradient">&infin;</div>
             <div class="big-stat-unit">agentes a desarrollar</div>
             <p class="big-stat-label">
-              Dinos que necesitas, nosotros te lo hacemos ....
+              Dinos qué necesitas, nosotros te lo hacemos ....
             </p>
           </div>
         </div>
 
-        <!-- Hoja de ruta: próximos agentes -->
         <div class="mt-16 pt-10 border-t border-slate-700/30 reveal" style="--reveal-delay: 0.5s">
           <p class="eyebrow reveal" style="--reveal-delay: 0.5s">Hoja de ruta</p>
           <h3 class="text-lg font-semibold mt-2 mb-6 reveal" style="--reveal-delay: 0.55s">
-            <span class="gradient-text">5 nuevos agentes</span> por llegar. ¿Teneis mas ideas?
+            <span class="gradient-text">5 nuevos agentes</span> por llegar. ¿Tenéis más ideas?
           </h3>
 
           <div class="grid grid-cols-2 lg:grid-cols-5 gap-4">
@@ -1316,7 +1310,7 @@
               <div class="agent-badge">agent-signal-anomaly</div>
               <div class="agent-title">Detección de anomalías por lectura</div>
               <p class="agent-desc">Marca lecturas IoT individuales fuera del comportamiento esperado.</p>
-              <p class="agent-demo">“47 lecturas imposibles en caudal-EDAR-norte en 24h”</p>
+              <p class="agent-demo">“47 lecturas imposibles en caudal-planta-norte en 24h”</p>
             </div>
             <div class="agent-card reveal" style="--reveal-delay: 0.76s">
               <div class="agent-badge">agent-recommender</div>
@@ -1328,13 +1322,13 @@
               <div class="agent-badge">agent-exec-brief</div>
               <div class="agent-title">Informe ejecutivo mensual</div>
               <p class="agent-desc">PDF automático de 2-3 páginas para cada cliente el día 1 de cada mes.</p>
-              <p class="agent-demo">“EMASESA recibe su informe sin intervención humana”</p>
+              <p class="agent-demo">“El cliente recibe su informe mensual sin intervención humana”</p>
             </div>
             <div class="agent-card reveal" style="--reveal-delay: 0.92s">
               <div class="agent-badge">agent-benchmark</div>
               <div class="agent-title">Benchmark cruzado anonimizado</div>
-              <p class="agent-desc">Compara KPIs del cliente vs percentil del resto de clientes de Idrica.</p>
-              <p class="agent-demo">“Aigües de Barcelona en p25 de eficiencia de flujo”</p>
+              <p class="agent-desc">Compara KPIs del cliente vs percentil del resto de la cartera de clientes.</p>
+              <p class="agent-demo">“Planta de operaciones A en p25 de eficiencia de flujo”</p>
             </div>
           </div>
         </div>
@@ -1344,12 +1338,12 @@
     <!-- ============================================================
          SLIDE 12 · RESUMEN POR AUDIENCIA
          ============================================================ -->
-    <section class="slide">
+<section class="slide">
       <div class="dot-grid"></div>
       <div class="slide-content">
         <p class="eyebrow reveal">14 · Resumen</p>
         <h2 class="title-2 mt-3 mb-2 reveal" style="--reveal-delay: 0.1s">
-          Una plataforma, <span class="gradient-text">tres audiencias dentro de Idrica</span>
+          Una plataforma, <span class="gradient-text">tres audiencias clave</span>
         </h2>
         <div class="w-16 h-1 gradient-bar rounded-full mb-10 reveal" style="--reveal-delay: 0.15s"></div>
 
@@ -1382,7 +1376,7 @@
           </div>
           <div class="glass-card p-6 reveal" style="--reveal-delay: 0.4s">
             <div class="icon-tile mb-4"><i data-lucide="clipboard-list" class="w-5 h-5"></i></div>
-            <h3 class="font-bold text-white text-lg mb-2">PMO de implantaciones</h3>
+            <h3 class="font-bold text-white text-lg mb-2">Oficina de proyectos (PMO)</h3>
             <p class="text-sm text-slate-300 leading-relaxed mb-3">
               Planifica el año con el dato real del propio histórico de Jira: dónde se va el lead
               time, qué fase concentra los retrasos, qué pasaría reforzando un equipo. Cierra más
@@ -1404,7 +1398,7 @@
             proceso incluida —
             <span class="text-cyan-300 font-semibold">
               sin proyectos paralelos de BI, sin pipelines a medida por cliente, sin BI Manager
-              externo.
+              extern.
             </span>
           </p>
         </div>
@@ -1453,7 +1447,7 @@
           </a>
         </div>
         <p class="mt-12 text-xs text-slate-600 reveal" style="--reveal-delay: 0.6s">
-          AQUA_INT + MINDDEN FLOW · Mayo 2026
+          AQUA_INT + PROCESS MINING · Mayo 2026
         </p>
       </div>
     </section>
