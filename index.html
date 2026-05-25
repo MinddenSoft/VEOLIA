@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
@@ -25,42 +25,48 @@
     <section class="slide items-center text-center">
       <div class="mesh-bg"><div class="mesh-extra"></div></div>
       <div class="slide-content">
-        <div class="hero-logo reveal" style="--reveal-delay: 0s">
-          <img src="img/mindden.png" alt="Mindden" />
+        <div class="hero-aside">
+          <div class="brand-chip mb-6 reveal float">
+            <i data-lucide="droplets" class="w-3.5 h-3.5"></i>
+            <span>PROPUESTA · VEOLIA · MAYO 2026</span>
+          </div>
         </div>
-        <div class="brand-chip mb-8 reveal float">
-          <i data-lucide="droplets" class="w-3.5 h-3.5"></i>
-          <span>PROPUESTA · VEOLIA · MAYO 2026</span>
+        <div class="hero-main">
+          <div class="hero-logo reveal" style="--reveal-delay: 0s">
+            <img src="img/mindden.png" alt="Mindden" />
+          </div>
+          <h1 class="title-1 mb-5 reveal" style="--reveal-delay: 0.1s">
+            De <span class="text-slate-400">mover datos a</span><br />
+            a <span class="gradient-text">entender procesos</span>
+          </h1>
+          <div class="w-20 h-1 gradient-bar rounded-full mx-auto mb-6 reveal" style="--reveal-delay: 0.2s"></div>
+          <p
+            class="text-lg md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto reveal"
+            style="--reveal-delay: 0.3s"
+          >
+             <b>Mindden</b> se consolida como el socio de referencia en implantaciones para utilities del agua,
+             <br><span class="text-cyan-300" style="font-size: medium">Sin reinventar la rueda en cada implantación y sin dependencias técnicas complejas.</span>
+          </p>
+          <p
+            class="text-sm md:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto mt-4 reveal"
+            style="--reveal-delay: 0.38s"
+          >
+           Menos código a medida por cliente. Más reuso entre implantaciones, más Time-to-Market y visibilidad real del proceso.
+          </p>
         </div>
-        <h1 class="title-1 mb-6 reveal" style="--reveal-delay: 0.1s">
-          De <span class="text-slate-400">mover datos a</span><br />
-          a <span class="gradient-text">entender procesos</span>
-        </h1>
-        <div class="w-20 h-1 gradient-bar rounded-full mx-auto mb-8 reveal" style="--reveal-delay: 0.2s"></div>
-        <p
-          class="text-lg md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto reveal"
-          style="--reveal-delay: 0.3s"
-        >
-           <b>Mindden</b> se consolida como el socio de referencia en implantaciones para utilities del agua,
-           <br><span class="text-cyan-300" style="font-size: medium">Sin reinventar la rueda en cada implantación y sin dependencias técnicas complejas.</span>
-        </p>
-        <p
-          class="text-sm md:text-base text-slate-400 leading-relaxed max-w-2xl mx-auto mt-5 reveal"
-          style="--reveal-delay: 0.38s"
-        >
-         Menos código a medida por cliente. Más reuso entre implantaciones, más Time-to-Market y visibilidad real del proceso.
-        </p>
-        <div
-          class="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm reveal"
-          style="--reveal-delay: 0.45s"
-        >
-          <span class="px-3.5 py-1.5 rounded-full border border-cyan-700/40 bg-cyan-900/20 text-cyan-200">
-            AQUA_INT
-          </span>
-          <span class="text-slate-500">+</span>
-          <span class="px-3.5 py-1.5 rounded-full border border-cyan-700/40 bg-cyan-900/20 text-cyan-200">
-            MINDDEN FLOW 
-          </span>
+        <div class="hero-tags">
+          <div
+            class="flex flex-wrap items-center justify-center gap-3 text-sm reveal"
+            style="--reveal-delay: 0.45s"
+          >
+            <span class="px-3.5 py-1.5 rounded-full border border-cyan-700/40 bg-cyan-900/20 text-cyan-200">
+              AQUA_INT
+            </span>
+            <span class="text-slate-500">+</span>
+            <span class="px-3.5 py-1.5 rounded-full border border-cyan-700/40 bg-cyan-900/20 text-cyan-200">
+              MINDDEN FLOW 
+            </span>
+          </div>
         </div>
       </div>
       <div class="scroll-hint">
@@ -219,7 +225,7 @@
           </div>
 
           <div class="vs-arrow reveal" style="--reveal-delay: 0.32s">
-            <i data-lucide="arrow-right" class="w-8 h-8"></i>
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
           </div>
 
           <div class="vs-card after reveal" style="--reveal-delay: 0.32s">
@@ -300,69 +306,71 @@
         </p>
 
         <div class="arch-flow reveal" style="--reveal-delay: 0.2s">
-          <div class="arch-node">
-            <div class="flex items-center gap-2 mb-1">
-              <i data-lucide="radio-tower" class="w-5 h-5 text-slate-400"></i>
-              <span class="arch-tag">Origen</span>
+          <div class="arch-row">
+            <div class="arch-node">
+              <div class="flex items-center gap-2 mb-1">
+                <i data-lucide="radio-tower" class="w-5 h-5 text-slate-400"></i>
+                <span class="arch-tag">Origen</span>
+              </div>
+              <div class="arch-name">Cliente</div>
+              <ul class="arch-list">
+                <li>Sensores MQTT</li>
+                <li>SCADA / time-series</li>
+                <li>BBDD operacional</li>
+                <li>AMQP / colas</li>
+              </ul>
             </div>
-            <div class="arch-name">Cliente</div>
-            <ul class="arch-list">
-              <li>Sensores MQTT</li>
-              <li>SCADA / time-series</li>
-              <li>BBDD operacional</li>
-              <li>AMQP / colas</li>
-            </ul>
-          </div>
 
-          <div class="arch-arrow"><i data-lucide="chevron-right" class="w-6 h-6"></i></div>
+            <div class="arch-arrow"><i data-lucide="chevron-down" class="w-5 h-5"></i></div>
 
-          <div class="arch-node accent">
-            <div class="flex items-center gap-2 mb-1">
-              <i data-lucide="droplets" class="w-5 h-5 text-cyan-300"></i>
-              <span class="arch-tag" >Ingesta + dominio</span>
+            <div class="arch-node accent">
+              <div class="flex items-center gap-2 mb-1">
+                <i data-lucide="droplets" class="w-5 h-5 text-cyan-300"></i>
+                <span class="arch-tag" >Ingesta + dominio</span>
+              </div>
+              <div class="arch-name">AQUA_INT</div>
+              <ul class="arch-list">
+                <li>Conectores listos por protocolo</li>
+                <li>Canonical → dominio agua</li>
+                <li>Cuarentena automática</li>
+                <li>Multi-tenant nativo (RLS + JWT)</li>
+                <li>API y panel de exploración</li>
+              </ul>
             </div>
-            <div class="arch-name">AQUA_INT</div>
-            <ul class="arch-list">
-              <li>Conectores listos por protocolo</li>
-              <li>Canonical → dominio agua</li>
-              <li>Cuarentena automática</li>
-              <li>Multi-tenant nativo (RLS + JWT)</li>
-              <li>API y panel de exploración</li>
-            </ul>
-          </div>
 
-          <div class="arch-arrow"><i data-lucide="chevron-right" class="w-6 h-6"></i></div>
+            <div class="arch-arrow"><i data-lucide="chevron-down" class="w-5 h-5"></i></div>
 
-          <div class="arch-node accent">
-            <div class="flex items-center gap-2 mb-1">
-              <i data-lucide="workflow" class="w-5 h-5 text-cyan-300"></i>
-              <span class="arch-tag" >Inteligencia</span>
+            <div class="arch-node accent">
+              <div class="flex items-center gap-2 mb-1">
+                <i data-lucide="workflow" class="w-5 h-5 text-cyan-300"></i>
+                <span class="arch-tag" >Inteligencia</span>
+              </div>
+              <div class="arch-name">Process Mining</div>
+              <ul class="arch-list">
+                <li>Descubrimiento del flujo real</li>
+                <li>Conformance + drift</li>
+                <li>Cuellos de botella con outliers</li>
+                <li>Simulación what-if</li>
+                <li>Narrativa IA en español</li>
+              </ul>
             </div>
-            <div class="arch-name">Process Mining</div>
-            <ul class="arch-list">
-              <li>Descubrimiento del flujo real</li>
-              <li>Conformance + drift</li>
-              <li>Cuellos de botella con outliers</li>
-              <li>Simulación what-if</li>
-              <li>Narrativa IA en español</li>
-            </ul>
-          </div>
 
-          <div class="arch-arrow"><i data-lucide="chevron-right" class="w-6 h-6"></i></div>
+            <div class="arch-arrow"><i data-lucide="chevron-down" class="w-5 h-5"></i></div>
 
-          <div class="arch-node">
-            <div class="flex items-center gap-2 mb-1">
-              <i data-lucide="target" class="w-5 h-5 text-slate-400"></i>
-              <span class="arch-tag">Mejoras</span>
+            <div class="arch-node">
+              <div class="flex items-center gap-2 mb-1">
+                <i data-lucide="target" class="w-5 h-5 text-slate-400"></i>
+                <span class="arch-tag">Mejoras</span>
+              </div>
+              <div class="arch-name">Implantaciones</div>
+              <ul class="arch-list">
+                <li>ROI acelerado</li>
+                <li>Optimización de OPEX</li>
+                <li>Trazabilidad total</li>
+                <li>Optimización de recursos</li>
+                <li>Escalabilidad ágil</li>
+              </ul>
             </div>
-            <div class="arch-name">Implantaciones</div>
-            <ul class="arch-list">
-              <li>ROI acelerado</li>
-              <li>Optimización de OPEX</li>
-              <li>Trazabilidad total</li>
-              <li>Optimización de recursos</li>
-              <li>Escalabilidad ágil</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -389,8 +397,43 @@
           aplica con configuración YAML, igual para todos los clientes.
         </p>
 
-        <div class="grid lg:grid-cols-[1.6fr_1fr] gap-8 items-center">
-          <div class="grid sm:grid-cols-2 gap-4">
+        <div class="grid lg:grid-cols-[1fr_1.8fr] gap-8 items-start">
+          <div class="space-y-4">
+            <div class="glass-card p-6 text-center reveal" style="--reveal-delay: 0.22s">
+              <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">
+                Tiempo de firma a producción
+              </p>
+              <div class="flex items-baseline justify-center gap-3">
+                <span class="text-3xl font-bold text-slate-500 line-through">Meses</span>
+                <i data-lucide="arrow-right" class="w-6 h-6 text-cyan-400"></i>
+                <span class="text-5xl font-black gradient-text">Semanas</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-4 leading-relaxed">
+                Mismo esfuerzo en consultoría con cliente, mucho menos en construcción técnica.
+              </p>
+            </div>
+            <div class="glass-card p-5 reveal" style="--reveal-delay: 0.3s">
+              <p class="text-xs uppercase tracking-widest text-cyan-300 mb-2">
+                Lo que esto devuelve a la operativa
+              </p>
+              <ul class="text-sm text-slate-300 space-y-1.5 leading-relaxed">
+                <li class="flex gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  Margen mayor por implantación.
+                </li>
+                <li class="flex gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  Más implantaciones al año con el mismo equipo.
+                </li>
+                <li class="flex gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
+                  Predictibilidad real en compromiso de fechas.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4 reveal" style="--reveal-delay: 0.32s">
             <div class="glass-card p-5 reveal" style="--reveal-delay: 0.22s">
               <div class="icon-tile mb-3"><i data-lucide="layout-template" class="w-5 h-5"></i></div>
               <h3 class="font-semibold text-white mb-1">Modelo de dominio agua listo</h3>
@@ -424,41 +467,6 @@
               </p>
             </div>
           </div>
-
-          <div class="reveal space-y-4" style="--reveal-delay: 0.32s">
-            <div class="glass-card p-6 text-center">
-              <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">
-                Tiempo de firma a producción
-              </p>
-              <div class="flex items-baseline justify-center gap-3">
-                <span class="text-3xl font-bold text-slate-500 line-through">Meses</span>
-                <i data-lucide="arrow-right" class="w-6 h-6 text-cyan-400"></i>
-                <span class="text-5xl font-black gradient-text">Semanas</span>
-              </div>
-              <p class="text-xs text-slate-500 mt-4 leading-relaxed">
-                Mismo esfuerzo en consultoría con cliente, mucho menos en construcción técnica.
-              </p>
-            </div>
-            <div class="glass-card p-5">
-              <p class="text-xs uppercase tracking-widest text-cyan-300 mb-2">
-                Lo que esto devuelve a la operativa
-              </p>
-              <ul class="text-sm text-slate-300 space-y-1.5 leading-relaxed">
-                <li class="flex gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
-                  Margen mayor por implantación.
-                </li>
-                <li class="flex gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
-                  Más implantaciones al año con el mismo equipo.
-                </li>
-                <li class="flex gap-2">
-                  <i data-lucide="check" class="w-4 h-4 text-cyan-400 shrink-0 mt-0.5"></i>
-                  Predictibilidad real en compromiso de fechas.
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -485,8 +493,23 @@
           cada mensaje trazado de extremo a extremo y la salud por conector en tiempo real.
         </p>
 
-        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-8 items-start">
-          <div class="space-y-3.5">
+        <div class="grid lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
+          <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.2s">
+            <div class="mock-window overflow-hidden">
+              <img src="img/eventoraw.jpg" alt="Event raw" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+            <div class="mock-window overflow-hidden">
+              <img src="img/monitorizacion.jpg" alt="Monitorización" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+            <div class="mock-window overflow-hidden">
+              <img src="img/centrocontrol.jpg" alt="Centro de control" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+            <div class="mock-window overflow-hidden">
+              <img src="img/eventoscanonicos.jpg" alt="Eventos canónicos" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+          </div>
+
+          <div class="space-y-3.5 reveal" style="--reveal-delay: 0.3s">
             <div class="glass-card p-4 reveal" style="--reveal-delay: 0.2s">
               <div class="flex items-start gap-3">
                 <div class="icon-tile shrink-0"><i data-lucide="git-fork" class="w-4 h-4"></i></div>
@@ -533,21 +556,6 @@
               </div>
             </div>
           </div>
-
-          <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.3s">
-            <div class="mock-window overflow-hidden">
-              <img src="img/eventoraw.jpg" alt="Event raw" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-            <div class="mock-window overflow-hidden">
-              <img src="img/monitorizacion.jpg" alt="Monitorización" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-            <div class="mock-window overflow-hidden">
-              <img src="img/centrocontrol.jpg" alt="Centro de control" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-            <div class="mock-window overflow-hidden">
-              <img src="img/eventoscanonicos.jpg" alt="Eventos canónicos" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -565,11 +573,8 @@
         </h2>
         <div class="w-16 h-1 gradient-bar rounded-full mb-6 reveal" style="--reveal-delay: 0.15s"></div>
 
-        <div class="grid lg:grid-cols-[1.4fr_1fr] gap-8 items-start">
-          <div class="mock-window overflow-hidden reveal" style="--reveal-delay: 0.2s">
-            <video src="video/chrome_cZym1BqrXk.mp4" class="w-full h-auto block" controls playsinline></video>
-          </div>
-          <div class="space-y-3.5">
+        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-8 items-start">
+          <div class="space-y-3.5 reveal" style="--reveal-delay: 0.2s">
             <div class="glass-card p-4 reveal" style="--reveal-delay: 0.3s">
               <div class="flex items-start gap-3">
                 <div class="icon-tile shrink-0"><i data-lucide="plug-zap" class="w-4 h-4"></i></div>
@@ -603,6 +608,9 @@
                 </div>
               </div>
             </div>
+          </div>
+          <div class="mock-window overflow-hidden reveal" style="--reveal-delay: 0.3s">
+            <video src="video/chrome_cZym1BqrXk.mp4" class="w-full h-auto block" controls playsinline></video>
           </div>
         </div>
       </div>
@@ -891,7 +899,7 @@
             </div>
           </div>
 
-          <div class="space-y-3.5">
+          <div class="space-y-3.5 reveal" style="--reveal-delay: 0.3s">
             <div class="glass-card p-4 reveal" style="--reveal-delay: 0.28s">
               <div class="flex items-start gap-3">
                 <div class="icon-tile shrink-0"><i data-lucide="brain-circuit" class="w-4 h-4"></i></div>
@@ -1045,7 +1053,7 @@
           entiende sin intérprete; el equipo de Idrica multiplica su capacidad de explicar.
         </p>
 
-        <div class="grid lg:grid-cols-[1.2fr_1fr] gap-8 items-start">
+        <div class="grid sm:grid-cols-[1.2fr_1fr] gap-6 items-start">
           <!-- Imágenes: narrativa IA -->
           <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.2s">
             <div class="mock-window overflow-hidden">
@@ -1055,9 +1063,8 @@
               <img src="img/agentenlp.jpg" alt="Agente NLP" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
             </div>
           </div>
-
           <!-- Capabilities -->
-          <div class="space-y-3.5">
+          <div class="space-y-3.5 reveal" style="--reveal-delay: 0.3s">
             <div class="glass-card p-4 reveal" style="--reveal-delay: 0.28s">
               <div class="flex items-start gap-3">
                 <div class="icon-tile shrink-0"><i data-lucide="languages" class="w-4 h-4"></i></div>
@@ -1108,7 +1115,6 @@
         </div>
       </div>
     </section>
-
     <!-- ============================================================
          SLIDE 9 · PILAR 6 — TAMBIÉN PARA IMPLANTACIÓN
          ============================================================ -->
@@ -1134,26 +1140,8 @@
           dónde se va el tiempo de verdad.
         </p>
 
-        <div class="grid lg:grid-cols-[1.4fr_1fr] gap-6 items-center">
-          <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.3s">
-            <div class="mock-window overflow-hidden">
-              <img src="img/diagramaflujo.jpg" alt="Diagrama de flujo" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-            <div class="mock-window overflow-hidden">
-              <img src="img/petri.jpg" alt="Red de Petri" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-            <div class="mock-window overflow-hidden">
-              <img src="img/gantt.jpg" alt="Diagrama Gantt" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-            <div class="mock-window overflow-hidden">
-              <img src="img/volumen.jpg" alt="Volumen de actividades" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-            <div class="mock-window overflow-hidden">
-              <img src="img/transiciones.jpg" alt="Transiciones" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
-            </div>
-          </div>
-
-          <div class="space-y-3.5">
+        <div class="grid lg:grid-cols-[1fr_1.4fr] gap-6 items-center">
+          <div class="space-y-3.5 reveal" style="--reveal-delay: 0.3s">
             <div class="glass-card p-4 reveal" style="--reveal-delay: 0.38s">
               <div class="flex items-start gap-3">
                 <div class="icon-tile shrink-0"><i data-lucide="hourglass" class="w-4 h-4"></i></div>
@@ -1187,6 +1175,24 @@
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3 reveal" style="--reveal-delay: 0.3s">
+            <div class="mock-window overflow-hidden">
+              <img src="img/diagramaflujo.jpg" alt="Diagrama de flujo" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+            <div class="mock-window overflow-hidden">
+              <img src="img/petri.jpg" alt="Red de Petri" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+            <div class="mock-window overflow-hidden">
+              <img src="img/gantt.jpg" alt="Diagrama Gantt" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+            <div class="mock-window overflow-hidden">
+              <img src="img/volumen.jpg" alt="Volumen de actividades" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
+            </div>
+            <div class="mock-window overflow-hidden">
+              <img src="img/transiciones.jpg" alt="Transiciones" class="w-full h-auto block cursor-zoom-in" onclick="lightboxOpen(this.src, this.alt)" />
             </div>
           </div>
         </div>

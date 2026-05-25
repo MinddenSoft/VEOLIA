@@ -1,5 +1,5 @@
 /* ============================================================
-   AQUA_INT + Mindden Flow — presentation styles
+   AQUA_INT + Mindden Flow — presentation styles (REDESIGNED)
    ============================================================ */
 
 :root {
@@ -19,11 +19,16 @@
   --emerald: #10b981;
   --amber: #f59e0b;
   --rose: #f43f5e;
+  --card-radius: 14px;
+  --btn-radius: 8px;
+  --mock-radius: 12px;
+  --tile-radius: 10px;
 }
 
 * {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: 'Sora', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
@@ -33,7 +38,6 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Scroll snap entre slides — feel de deck profesional */
 html {
   scroll-snap-type: y mandatory;
 }
@@ -46,17 +50,17 @@ html {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  padding: 5rem 1.5rem;
+  padding: 4rem 1.5rem;
   overflow: hidden;
 }
 @media (min-width: 768px) {
   .slide {
-    padding: 5rem 4rem;
+    padding: 4rem 3rem;
   }
 }
 @media (min-width: 1024px) {
   .slide {
-    padding: 5rem 6rem;
+    padding: 4rem 5rem;
   }
 }
 
@@ -120,7 +124,6 @@ html {
   }
 }
 
-/* Subtle dot grid background for normal slides */
 .dot-grid {
   position: absolute;
   inset: 0;
@@ -139,7 +142,29 @@ html {
 }
 
 /* ============================================================
-   Typography
+   Hero layout — asymmetric 3-column structure
+   ============================================================ */
+
+.hero-aside {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.hero-main {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-tags {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* ============================================================
+   Typography — Sora with bolder contrast
    ============================================================ */
 
 .gradient-text {
@@ -150,14 +175,15 @@ html {
 }
 .gradient-bar {
   background: linear-gradient(90deg, #22d3ee, #0ea5e9);
+  opacity: 0.9;
 }
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--cyan-light);
 }
@@ -171,18 +197,18 @@ html {
 .title-1 {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 800;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
 }
 .title-2 {
   font-size: clamp(1.75rem, 3.2vw, 2.75rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
 }
 
 /* ============================================================
-   Cards / containers
+   Cards / containers — redesigned shapes & shadows
    ============================================================ */
 
 .glass-card {
@@ -192,32 +218,33 @@ html {
     rgba(10, 22, 40, 0.85) 100%
   );
   border: 1px solid var(--line);
-  border-radius: 16px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px -16px rgba(2, 12, 27, 0.5);
   transition:
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s,
-    box-shadow 0.3s;
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.25s,
+    box-shadow 0.35s;
 }
 .glass-card:hover {
-  transform: translateY(-3px);
+  transform: scale(1.02) translateY(-2px);
   border-color: var(--line-strong);
   box-shadow:
-    0 18px 40px -20px rgba(6, 182, 212, 0.25),
-    0 6px 16px -8px rgba(0, 0, 0, 0.5);
+    0 24px 48px -20px rgba(6, 182, 212, 0.2),
+    0 0 0 1px rgba(34, 211, 238, 0.06) inset;
 }
 
 .glass-card h3 {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.35;
 }
 .glass-card .text-sm {
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 .glass-card .text-xs {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 
@@ -225,26 +252,42 @@ html {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   background: linear-gradient(135deg, rgba(34, 211, 238, 0.15), rgba(14, 165, 233, 0.05));
   border: 1px solid rgba(34, 211, 238, 0.25);
   color: var(--cyan-light);
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s;
+}
+.glass-card:hover .icon-tile {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
 }
 
 /* ============================================================
-   Mockup blocks: mini-replicas of the real product UI
+   Mockup blocks — sharper, with different shadows
    ============================================================ */
 
 .mock-window {
   border: 1px solid var(--line-strong);
-  border-radius: 14px;
+  border-radius: 12px;
   background: linear-gradient(180deg, #0d1a2e 0%, #081424 100%);
   box-shadow:
-    0 30px 60px -20px rgba(2, 12, 27, 0.7),
-    0 0 0 1px rgba(34, 211, 238, 0.08) inset;
+    0 20px 40px -16px rgba(2, 12, 27, 0.6),
+    0 0 0 1px rgba(34, 211, 238, 0.06) inset;
   overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s;
+}
+.mock-window:hover {
+  transform: scale(1.015);
+  box-shadow:
+    0 28px 56px -20px rgba(6, 182, 212, 0.18),
+    0 0 0 1px rgba(34, 211, 238, 0.12) inset;
 }
 .mock-window-header {
   display: flex;
@@ -273,7 +316,6 @@ html {
   background: #10b98180;
 }
 
-/* Pipeline mockup */
 .pipeline-mock {
   display: grid;
   grid-template-columns: 1fr auto 1fr auto 1fr;
@@ -330,7 +372,6 @@ html {
   color: rgba(148, 163, 184, 0.5);
 }
 
-/* Gauge mockup */
 .gauge {
   position: relative;
   width: 100%;
@@ -378,7 +419,6 @@ html {
   }
 }
 
-/* AI narrative mockup */
 .ai-narrative {
   padding: 1.2rem 1.4rem;
   font-size: 0.85rem;
@@ -410,7 +450,6 @@ html {
   font-weight: 600;
 }
 
-/* What-if simulator mockup */
 .whatif-row {
   display: flex;
   align-items: center;
@@ -450,7 +489,6 @@ html {
   color: var(--text-muted);
 }
 
-/* Connector health mock */
 .connector-row {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr 1fr 0.6fr;
@@ -512,35 +550,62 @@ html {
 }
 
 /* ============================================================
-   Architecture flow diagram
+   Architecture flow — vertical timeline layout
    ============================================================ */
 
 .arch-flow {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+.arch-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
 @media (min-width: 900px) {
-  .arch-flow {
-    grid-template-columns: 1fr auto 1.6fr auto 1.6fr auto 1fr;
+  .arch-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1.4fr auto 1.4fr auto 1fr;
     align-items: stretch;
+    max-width: none;
+    gap: 0.75rem;
+  }
+  .arch-row .arch-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(34, 211, 238, 0.5);
   }
 }
+
 .arch-node {
   border: 1px solid var(--line-strong);
-  border-radius: 14px;
-  padding: 1.75rem;
+  border-radius: 18px;
+  padding: 1.5rem;
   background: linear-gradient(180deg, rgba(15, 31, 55, 0.7) 0%, rgba(10, 22, 40, 0.5) 100%);
   display: flex;
   flex-direction: column;
-  min-height: 250px;
+  width: 100%;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s;
+}
+.arch-node:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 32px -16px rgba(6, 182, 212, 0.15);
 }
 .arch-node.accent {
   border-color: rgba(34, 211, 238, 0.4);
   box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.1) inset;
 }
 .arch-tag {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   color: var(--text-muted);
@@ -548,49 +613,58 @@ html {
 .arch-name {
   font-weight: 700;
   color: var(--text);
-  margin-top: 0.25rem;
-  font-size: 1.35rem;
+  margin-top: 0.2rem;
+  font-size: 1.25rem;
 }
 .arch-list {
-  margin-top: 0.85rem;
-  font-size: 1rem;
+  margin-top: 0.7rem;
+  font-size: 0.9rem;
   color: var(--text-soft);
-  line-height: 1.55;
+  line-height: 1.5;
 }
 .arch-list li {
   position: relative;
   padding-left: 1rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 .arch-list li::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.55rem;
-  width: 5px;
-  height: 5px;
+  top: 0.5rem;
+  width: 4px;
+  height: 4px;
   border-radius: 50%;
   background: var(--cyan);
 }
 .arch-arrow {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(34, 211, 238, 0.55);
+  color: rgba(34, 211, 238, 0.45);
+  padding: 0.25rem 0;
 }
+
 @media (min-width: 900px) {
-  .arch-arrow {
-    display: flex;
+  .arch-row .arch-arrow {
+    padding: 0;
   }
 }
 
 /* ============================================================
-   Big numbers slide
+   Big numbers slide — compact cards with different hover
    ============================================================ */
 
 .big-stat {
   text-align: center;
-  padding: 1.5rem 1rem;
+  padding: 1.75rem 1rem;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s;
+}
+.big-stat:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 40px -16px rgba(6, 182, 212, 0.15);
 }
 .big-stat-num {
   font-size: clamp(2.5rem, 5.5vw, 4.5rem);
@@ -620,7 +694,7 @@ html {
 }
 
 /* ============================================================
-   Agent roadmap cards
+   Agent roadmap cards — redesigned
    ============================================================ */
 
 .agent-card {
@@ -631,43 +705,43 @@ html {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition:
-    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    border-color 0.3s,
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.25s,
     box-shadow 0.3s;
 }
 .agent-card:hover {
-  transform: translateY(-2px);
+  transform: scale(1.02) translateY(-3px);
   border-color: var(--line-strong);
-  box-shadow: 0 12px 30px -16px rgba(6, 182, 212, 0.2);
+  box-shadow: 0 16px 36px -16px rgba(6, 182, 212, 0.2);
 }
 .agent-badge {
   display: inline-block;
   font-family: ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   color: var(--cyan-light);
   background: rgba(34, 211, 238, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.2);
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
   letter-spacing: 0.02em;
   margin-bottom: 0.6rem;
 }
 .agent-title {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--text);
   line-height: 1.3;
   margin-bottom: 0.4rem;
 }
 .agent-desc {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-soft);
   line-height: 1.4;
   margin-bottom: 0.5rem;
 }
 .agent-demo {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: rgba(34, 211, 238, 0.65);
   font-style: italic;
   line-height: 1.3;
@@ -676,54 +750,57 @@ html {
 }
 
 /* ============================================================
-   Reveal animations on scroll
+   Reveal animations on scroll — scale + fade
    ============================================================ */
 
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
+  transform: translateY(20px) scale(0.97);
+  filter: blur(2px);
   transition:
     opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--reveal-delay, 0s);
 }
 .reveal.in {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
 }
 
 /* ============================================================
-   Navigation (dots + counter)
+   Navigation
    ============================================================ */
 
 .nav-dots {
   position: fixed;
-  right: 1.25rem;
+  right: 1rem;
   top: 50%;
   transform: translateY(-50%);
   z-index: 50;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 .nav-dot {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: rgba(148, 163, 184, 0.3);
   border: none;
   cursor: pointer;
   padding: 0;
   transition:
-    background 0.3s,
-    transform 0.3s;
+    all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .nav-dot:hover {
   background: rgba(34, 211, 238, 0.6);
+  transform: scale(1.5);
 }
 .nav-dot.active {
   background: var(--cyan-light);
-  transform: scale(1.4);
+  transform: scale(1.6);
   box-shadow: 0 0 12px var(--cyan-glow);
 }
 
@@ -733,12 +810,12 @@ html {
   right: 1.5rem;
   z-index: 50;
   font-family: ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   background: rgba(10, 22, 40, 0.85);
   border: 1px solid var(--line);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
   backdrop-filter: blur(10px);
 }
 .nav-counter strong {
@@ -754,87 +831,86 @@ html {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   background: rgba(10, 22, 40, 0.85);
   border: 1px solid var(--line);
-  padding: 0.4rem 0.7rem;
-  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  border-radius: 6px;
   backdrop-filter: blur(10px);
 }
 .nav-hint kbd {
   font-family: ui-monospace, monospace;
-  font-size: 0.65rem;
+  font-size: 0.6rem;
   background: rgba(148, 163, 184, 0.1);
   border: 1px solid var(--line);
-  padding: 0.05rem 0.4rem;
-  border-radius: 4px;
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
   color: var(--text);
 }
 
-/* Hero scroll hint */
 .scroll-hint {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   color: var(--text-muted);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  animation: bounce 2s ease-in-out infinite;
+  gap: 0.3rem;
+  animation: floatBounce 2.4s ease-in-out infinite;
 }
-@keyframes bounce {
+@keyframes floatBounce {
   0%,
   100% {
     transform: translateX(-50%) translateY(0);
   }
   50% {
-    transform: translateX(-50%) translateY(6px);
+    transform: translateX(-50%) translateY(8px);
   }
 }
 
-/* Hero logo */
 .hero-logo {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .hero-logo img {
-  height: 100px;
+  height: 90px;
   width: auto;
   border-radius: 12px;
   filter: drop-shadow(0 4px 20px rgba(6, 182, 212, 0.15));
-  transition: filter 0.3s;
+  transition:
+    filter 0.3s,
+    transform 0.3s;
+}
+.hero-logo img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 30px rgba(6, 182, 212, 0.25));
 }
 [data-theme="light"] .hero-logo img {
   filter: drop-shadow(0 4px 16px rgba(103, 151, 205, 0.12));
 }
 
-/* Tagline chip in hero */
 .brand-chip {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  border-radius: 8px;
   background: rgba(34, 211, 238, 0.08);
   border: 1px solid rgba(34, 211, 238, 0.25);
   color: var(--cyan-light);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.06em;
 }
 
 /* ============================================================
-   Theme toggle button
-   ============================================================ */
-
-/* ============================================================
-   Light mode
+   Light mode — all original colors preserved
    ============================================================ */
 
 [data-theme="light"] {
@@ -934,7 +1010,6 @@ html {
 }
 
 [data-theme="light"] .whatif-row { border-top-color: rgba(148, 163, 184, 0.15); }
-
 [data-theme="light"] .connector-row { border-top-color: rgba(148, 163, 184, 0.15); }
 
 [data-theme="light"] .rounded-lg.border.border-slate-700\/50 {
@@ -1014,10 +1089,6 @@ html {
 [data-theme="light"] .text-emerald-300 { color: #1a8a4a; }
 
 /* ============================================================
-   Print fallback
-   ============================================================ */
-
-/* ============================================================
    Lightbox
    ============================================================ */
 
@@ -1072,17 +1143,17 @@ html {
 }
 
 /* ============================================================
-   Motion animations
+   Motion & animations — redesigned
    ============================================================ */
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-8px); }
+  50%      { transform: translateY(-6px); }
 }
 
 @keyframes floatReverse {
   0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(6px); }
+  50%      { transform: translateY(4px); }
 }
 
 @keyframes pulseGlow {
@@ -1104,6 +1175,11 @@ html {
 @keyframes countReveal {
   from { opacity: 0; transform: scale(0.6); }
   to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes cardEnter {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .float {
@@ -1132,29 +1208,39 @@ html {
 }
 
 /* ============================================================
-   Versus comparison (AQUA_INT vs Airflow + NiFi)
+   Versus comparison — stacked vertical cards
    ============================================================ */
 
 .vs-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
 }
-@media (min-width: 900px) {
+
+@media (min-width: 768px) {
   .vs-grid {
+    display: grid;
     grid-template-columns: 1fr auto 1fr;
+    align-items: stretch;
   }
 }
 
 .vs-card {
-  border-radius: 16px;
-  padding: 1.75rem;
+  border-radius: 14px;
+  padding: 1.5rem;
   border: 1px solid var(--line-strong);
   background: linear-gradient(180deg, rgba(15, 31, 55, 0.7) 0%, rgba(10, 22, 40, 0.6) 100%);
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s;
+}
+.vs-card:hover {
+  transform: scale(1.015);
+  box-shadow: 0 12px 32px -16px rgba(6, 182, 212, 0.12);
 }
 .vs-card.before {
   border-color: rgba(244, 63, 94, 0.28);
@@ -1168,12 +1254,12 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 0.25rem 0.7rem;
-  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
   align-self: flex-start;
 }
 .vs-card.before .vs-pill {
@@ -1187,7 +1273,7 @@ html {
   border: 1px solid rgba(34, 211, 238, 0.3);
 }
 .vs-card h3 {
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: var(--text);
   line-height: 1.2;
@@ -1205,17 +1291,17 @@ html {
   display: flex;
   align-items: flex-start;
   gap: 0.65rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   line-height: 1.5;
   color: var(--text-soft);
 }
 .vs-list li::before {
   content: "";
   flex-shrink: 0;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  margin-top: 0.55rem;
+  margin-top: 0.5rem;
 }
 .vs-card.before .vs-list li::before {
   background: #fb7185;
@@ -1227,37 +1313,41 @@ html {
 }
 
 .vs-arrow {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   color: var(--cyan-light);
+  padding: 0.25rem 0;
 }
-@media (min-width: 900px) {
+
+@media (min-width: 768px) {
   .vs-arrow {
-    display: flex;
+    padding: 0;
   }
 }
 
-/* TCO table */
+/* ============================================================
+   TCO table — redesigned
+   ============================================================ */
 
 .tco-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--text);
   border: 1px solid var(--line-strong);
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   background: rgba(10, 22, 40, 0.55);
 }
 .tco-table thead th {
   text-align: left;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--text-muted);
-  padding: 0.9rem 1.1rem;
+  padding: 0.8rem 1rem;
   background: rgba(15, 31, 55, 0.7);
   border-bottom: 1px solid var(--line-strong);
 }
@@ -1265,10 +1355,10 @@ html {
   color: var(--cyan-light);
 }
 .tco-table tbody td {
-  padding: 0.85rem 1.1rem;
+  padding: 0.75rem 1rem;
   border-top: 1px solid var(--line);
   vertical-align: top;
-  line-height: 1.45;
+  line-height: 1.4;
 }
 .tco-table tbody tr:first-child td {
   border-top: 0;
@@ -1299,27 +1389,29 @@ html {
   font-family: ui-monospace, monospace;
 }
 .tco-foot {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
-  margin-top: 0.9rem;
+  margin-top: 0.8rem;
   font-style: italic;
 }
 
-/* MINDDEN FLOW chapter divider */
+/* ============================================================
+   Chapter divider — process mining section headers
+   ============================================================ */
 
 .chapter-divider {
   display: flex;
   align-items: center;
   gap: 0.85rem;
-  padding: 0.9rem 1.3rem;
-  border-radius: 14px;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
   border: 1px solid rgba(34, 211, 238, 0.25);
   background: linear-gradient(90deg, rgba(34, 211, 238, 0.1) 0%, rgba(34, 211, 238, 0) 70%);
   margin-bottom: 1.5rem;
 }
 .chapter-divider .chapter-tag {
   font-family: ui-monospace, monospace;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   letter-spacing: 0.12em;
   color: var(--cyan-light);
   text-transform: uppercase;
@@ -1329,7 +1421,9 @@ html {
   color: var(--text);
 }
 
-/* Highlight metric chips for ROI slide */
+/* ============================================================
+   ROI metric chips
+   ============================================================ */
 
 .roi-chip {
   display: flex;
@@ -1338,9 +1432,16 @@ html {
   justify-content: center;
   text-align: center;
   padding: 1.2rem 0.75rem;
-  border-radius: 14px;
+  border-radius: 18px;
   border: 1px solid rgba(34, 211, 238, 0.25);
   background: linear-gradient(180deg, rgba(34, 211, 238, 0.07) 0%, rgba(10, 22, 40, 0.5) 100%);
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s;
+}
+.roi-chip:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 28px -12px rgba(6, 182, 212, 0.15);
 }
 .roi-chip-num {
   font-size: clamp(1.8rem, 3.6vw, 2.6rem);
@@ -1354,14 +1455,14 @@ html {
 }
 .roi-chip-label {
   margin-top: 0.6rem;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--text-muted);
 }
 .roi-chip-sub {
   margin-top: 0.35rem;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-soft);
   line-height: 1.35;
 }
@@ -1434,6 +1535,9 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+[data-theme="light"] .roi-chip:hover {
+  box-shadow: 0 12px 28px -12px rgba(103, 151, 205, 0.15);
+}
 
 @media print {
   html {
@@ -1449,4 +1553,38 @@ html {
   .scroll-hint {
     display: none;
   }
+}
+
+/* ============================================================
+   Additional micro-interactions
+   ============================================================ */
+
+.glass-card,
+.agent-card,
+.roi-chip,
+.big-stat {
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s,
+    border-color 0.25s;
+}
+
+.mock-window img {
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mock-window:hover img {
+  transform: scale(1.04);
+}
+
+@keyframes cardPulse {
+  0%, 100% { border-color: var(--line-strong); }
+  50%      { border-color: rgba(34, 211, 238, 0.2); }
+}
+
+.vs-card.accent-pulse {
+  animation: cardPulse 4s ease-in-out infinite;
+}
+
+.cursor-zoom-in {
+  cursor: zoom-in;
 }
