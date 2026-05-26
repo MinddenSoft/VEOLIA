@@ -1,4 +1,4 @@
-# AQUA_INT + Mindden Flow · Presentación a Idrica
+# AQUA_INT + Mindden Flow · Presentación a Veolia
 
 Presentación HTML/CSS/JS sin dependencias de build, pensada para mostrar a
 Idrica la propuesta de valor de implantar **AQUA_INT** (capa de ingesta y
